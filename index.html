@@ -13,11 +13,16 @@
     <div class="container">
         <div class="app-wrapping">
     <h1 id="city"></h1>
-    <h5>
-    <div>
-        Last updated: <span id="last-updated"></span>
-    </div>
-    </h5>
+    <form id="search-form" class="mb-3">
+        <div class="row">
+            <div class="col-8">
+                <input type="search" placeholder="Type a city..." class="form-control">
+            </div>
+            <div class="col-4">
+                <input type="submit" value="Search" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
     <div class="row">
         <div class="col-6">
         <ul>
@@ -25,7 +30,7 @@
             <strong id="temperature"></strong>
             <strong>°C | F</strong>
             </li>
-            <li id="feels-like"></li>
+            <li><span id="feels-like"></span> °C</li>
             </ul>
             </div>
     <div class="col-6">
@@ -51,6 +56,9 @@
             Sunset: <span id="sunset"></span>
         </li>
     </ul>
+    </div>
+    <div>
+        Last updated: <span id="last-updated"></span>
     </div>
     <small>
         <a href="https://github.com/hase-bot/Hase-s-Vanilla-Weather" target="_blank">
