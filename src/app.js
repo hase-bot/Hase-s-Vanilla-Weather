@@ -36,8 +36,17 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
+function search(city) {
 let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-let city = "Beijing"
 let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiURL).then(displayTemperature);
+}
 
-axios.get(apiURL).then(displayTemperature); 
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
